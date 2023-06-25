@@ -3,6 +3,7 @@ package com.pixelperfect;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
@@ -20,10 +21,33 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, OnboardingActivity.class);
-                startActivity(intent);
-                finish();
+
+                SharedPreferences pref = getSharedPreferences("login", MODE_PRIVATE);
+                boolean check = pref.getBoolean("flag", false);
+                SharedPreferences pref4 = getSharedPreferences("signup", MODE_PRIVATE);
+                boolean check_signup = pref4.getBoolean("flag2", false);
+                SharedPreferences pref3 = getSharedPreferences("onboarding", MODE_PRIVATE);
+                boolean check_onboarding = pref3.getBoolean("flag4", false);
+
+                if (check_onboarding && !check_signup) {
+                    Intent intent1 = new Intent(SplashActivity.this, SignupActivity.class);
+                    finish();
+                    startActivity(intent1);
+                } else if (check_onboarding && check) {
+                    Intent intent1 = new Intent(SplashActivity.this, MainActivity.class);
+                    finish();
+                    startActivity(intent1);
+                } else if (check_onboarding && check_signup && check) {
+                    Intent intent1 = new Intent(SplashActivity.this, MainActivity.class);
+                    finish();
+                    startActivity(intent1);
+                }
+                else {
+                    Intent intent = new Intent(SplashActivity.this, OnboardingActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
-        },3000);
+        },2000);
     }
 }

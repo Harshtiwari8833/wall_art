@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "83148076889",
+    "project_id": "wall-art-96c2a",
+    "storage_bucket": "wall-art-96c2a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:83148076889:android:4d4039ca99d6cb854a7e48",
+        "android_client_info": {
+          "package_name": "com.pixelperfect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "83148076889-d4mmj93ogbk83jv8n18sqv70h3kojrbp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsZhonIhhgLi3XVc_P3T3YdP0OgJ5Z3Nw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "83148076889-d4mmj93ogbk83jv8n18sqv70h3kojrbp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
