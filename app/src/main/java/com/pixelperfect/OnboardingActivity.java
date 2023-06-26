@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -25,7 +26,18 @@ public class OnboardingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_onboarding);
+        SharedPreferences pref3 = getSharedPreferences("onboarding", MODE_PRIVATE);
+        boolean check_onboarding = pref3.getBoolean("flag4", false);
+
+        if(check_onboarding){
+            Intent intent = new Intent(OnboardingActivity.this, SignupActivity.class);
+            finish();
+            startActivity(intent);
+
+        }
 
         buttonOnboardingAction = findViewById(R.id.buttonOnboardingAction);
 
@@ -62,7 +74,7 @@ public class OnboardingActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = pref3.edit();
                     editor.putBoolean("flag4", true);
                     editor.apply();
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(),SignupActivity.class));
                     finish();
                 }
             }
