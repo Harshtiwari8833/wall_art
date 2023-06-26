@@ -26,55 +26,49 @@ public class cat_Fragment extends Fragment {
     ArrayList<catModel> arrayList = new ArrayList<>();
 
 
-    public cat_Fragment() {
-    }
-
-    public static cat_Fragment newInstance(String param1, String param2) {
-        cat_Fragment fragment = new cat_Fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+//    public static cat_Fragment newInstance(String param1, String param2) {
+//        cat_Fragment fragment = new cat_Fragment();
+//        Bundle args = new Bundle();
+//        args.putString(ARG_PARAM1, param1);
+//        args.putString(ARG_PARAM2, param2);
+//        fragment.setArguments(args);
+//        return fragment;
+//    }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_cat_, container, false);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
 
             recyclerView = recyclerView.findViewById(R.id.recycle);
-            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-            arrayList.add(new catModel("Nature",R.drawable.nature1));
-            arrayList.add(new catModel("City",R.drawable.nature1));
-            arrayList.add(new catModel("Animal",R.drawable.nature1));
-            arrayList.add(new catModel("Landscape",R.drawable.nature1));
-            arrayList.add(new catModel("Amoled",R.drawable.nature1));
-            arrayList.add(new catModel("Dark",R.drawable.nature1));
-            arrayList.add(new catModel("Anime",R.drawable.nature1));
-            arrayList.add(new catModel("Cars",R.drawable.nature1));
-            arrayList.add(new catModel("Sports",R.drawable.nature1));
-            arrayList.add(new catModel("Space",R.drawable.nature1));
-            arrayList.add(new catModel("SuperHeros",R.drawable.nature1));
-            arrayList.add(new catModel("iOS",R.drawable.nature1));
-            arrayList.add(new catModel("Solid",R.drawable.nature1));
-            arrayList.add(new catModel("Abstract",R.drawable.nature1));
-            arrayList.add(new catModel("Shapes",R.drawable.nature1));
-            arrayList.add(new catModel("Minimal",R.drawable.nature1));
+            arrayList.add(new catModel("Nature", R.drawable.nature1));
+            arrayList.add(new catModel("City", R.drawable.nature1));
+            arrayList.add(new catModel("Animal", R.drawable.nature1));
+            arrayList.add(new catModel("Landscape", R.drawable.nature1));
+            arrayList.add(new catModel("Amoled", R.drawable.nature1));
+            arrayList.add(new catModel("Dark", R.drawable.nature1));
+            arrayList.add(new catModel("Anime", R.drawable.nature1));
+            arrayList.add(new catModel("Cars", R.drawable.nature1));
+            arrayList.add(new catModel("Sports", R.drawable.nature1));
+            arrayList.add(new catModel("Space", R.drawable.nature1));
+            arrayList.add(new catModel("SuperHeros", R.drawable.nature1));
+            arrayList.add(new catModel("iOS", R.drawable.nature1));
+            arrayList.add(new catModel("Solid", R.drawable.nature1));
+            arrayList.add(new catModel("Abstract", R.drawable.nature1));
+            arrayList.add(new catModel("Shapes", R.drawable.nature1));
+            arrayList.add(new catModel("Minimal", R.drawable.nature1));
 
-            RecyclerAdapterCAT adapter = new RecyclerAdapterCAT(this,arrayList);
+            RecyclerAdapterCAT adapter = new RecyclerAdapterCAT(getContext(), arrayList);
             recyclerView.setAdapter(adapter);
 
-        }
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cat_, container, false);
+        }
+        return view;
     }
 }
