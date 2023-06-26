@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -22,30 +23,23 @@ public class cat_Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    RecyclerView recyclerView;
+   private RecyclerView recyclerView;
     ArrayList<catModel> arrayList = new ArrayList<>();
 
-
-//    public static cat_Fragment newInstance(String param1, String param2) {
-//        cat_Fragment fragment = new cat_Fragment();
-//        Bundle args = new Bundle();
-//        args.putString(ARG_PARAM1, param1);
-//        args.putString(ARG_PARAM2, param2);
-//        fragment.setArguments(args);
-//        return fragment;
-//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_cat_, container, false);
 
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+//        if (getArguments() != null) {
+//            mParam1 = getArguments().getString(ARG_PARAM1);
+//            mParam2 = getArguments().getString(ARG_PARAM2);
 
-            recyclerView = recyclerView.findViewById(R.id.recycle);
-            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView = view.findViewById(R.id.recycle);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
+        recyclerView.setLayoutManager(linearLayoutManager);
 
             arrayList.add(new catModel("Nature", R.drawable.nature1));
             arrayList.add(new catModel("City", R.drawable.nature1));
@@ -64,11 +58,13 @@ public class cat_Fragment extends Fragment {
             arrayList.add(new catModel("Shapes", R.drawable.nature1));
             arrayList.add(new catModel("Minimal", R.drawable.nature1));
 
-            RecyclerAdapterCAT adapter = new RecyclerAdapterCAT(getContext(), arrayList);
+   RecyclerAdapterCAT adapter = new RecyclerAdapterCAT(getContext(), arrayList);
+
             recyclerView.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
 
 
-        }
+
         return view;
     }
 }
