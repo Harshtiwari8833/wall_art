@@ -41,22 +41,22 @@ public class cat_Fragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-            arrayList.add(new catModel("Nature", R.drawable.nature1));
-            arrayList.add(new catModel("City", R.drawable.nature1));
-            arrayList.add(new catModel("Animal", R.drawable.nature1));
-            arrayList.add(new catModel("Landscape", R.drawable.nature1));
-            arrayList.add(new catModel("Amoled", R.drawable.nature1));
-            arrayList.add(new catModel("Dark", R.drawable.nature1));
-            arrayList.add(new catModel("Anime", R.drawable.nature1));
-            arrayList.add(new catModel("Cars", R.drawable.nature1));
-            arrayList.add(new catModel("Sports", R.drawable.nature1));
-            arrayList.add(new catModel("Space", R.drawable.nature1));
-            arrayList.add(new catModel("SuperHeros", R.drawable.nature1));
-            arrayList.add(new catModel("iOS", R.drawable.nature1));
-            arrayList.add(new catModel("Solid", R.drawable.nature1));
-            arrayList.add(new catModel("Abstract", R.drawable.nature1));
-            arrayList.add(new catModel("Shapes", R.drawable.nature1));
-            arrayList.add(new catModel("Minimal", R.drawable.nature1));
+            arrayList.add(new catModel("Nature", R.drawable.nature));
+            arrayList.add(new catModel("City", R.drawable.city));
+            arrayList.add(new catModel("Animal", R.drawable.animal));
+            arrayList.add(new catModel("Landscape", R.drawable.landscape));
+            arrayList.add(new catModel("Amoled", R.drawable.amoled));
+            arrayList.add(new catModel("Dark", R.drawable.dark));
+            arrayList.add(new catModel("Anime", R.drawable.anime));
+            arrayList.add(new catModel("Cars", R.drawable.car));
+            arrayList.add(new catModel("Sports", R.drawable.sports));
+            arrayList.add(new catModel("Space", R.drawable.space));
+            arrayList.add(new catModel("SuperHeros", R.drawable.superhero));
+            arrayList.add(new catModel("iOS", R.drawable.ios));
+            arrayList.add(new catModel("Solid", R.drawable.solid));
+            arrayList.add(new catModel("Abstract", R.drawable.abst));
+            arrayList.add(new catModel("Shapes", R.drawable.shapes01));
+            arrayList.add(new catModel("Minimal", R.drawable.minimal));
 
    RecyclerAdapterCAT adapter = new RecyclerAdapterCAT(getContext(), arrayList);
 
