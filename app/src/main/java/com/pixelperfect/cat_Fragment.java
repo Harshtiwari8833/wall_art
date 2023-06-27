@@ -11,19 +11,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class cat_Fragment extends Fragment {
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    private String mParam1;
-    private String mParam2;
-
-   private RecyclerView recyclerView;
+   RecyclerView recyclerView;
     ArrayList<catModel> arrayList = new ArrayList<>();
 
 
@@ -33,13 +28,10 @@ public class cat_Fragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_cat_, container, false);
 
-//        if (getArguments() != null) {
-//            mParam1 = getArguments().getString(ARG_PARAM1);
-//            mParam2 = getArguments().getString(ARG_PARAM2);
-
         recyclerView = view.findViewById(R.id.recycle);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(linearLayoutManager);
+
 
             arrayList.add(new catModel("Nature", R.drawable.nature0));
             arrayList.add(new catModel("City", R.drawable.city0));
@@ -63,8 +55,7 @@ public class cat_Fragment extends Fragment {
             recyclerView.setAdapter(adapter);
             adapter.notifyDataSetChanged();
 
-
-
-        return view;
+            return view;
     }
+
 }

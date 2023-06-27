@@ -17,18 +17,21 @@ import java.util.zip.Inflater;
 public class wallpaperAdapter extends RecyclerView.Adapter<wallpaperAdapter.ViewHolder>{
     Context context;
     ArrayList<wallModel> list;
+    public wallpaperAdapter(Context context, ArrayList<wallModel> list){
+        this.list= list;
+    }
     @NonNull
     @Override
     public wallpaperAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.fragment_wall_, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.wall_layout, parent, false);
 
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull wallpaperAdapter.ViewHolder holder, int position) {
-//        holder.img.;
+       holder.img.setImageResource(list.get(position).img);
     }
 
     @Override
@@ -42,8 +45,6 @@ public class wallpaperAdapter extends RecyclerView.Adapter<wallpaperAdapter.View
             super(itemView);
 
             img = itemView.findViewById(R.id.wall_img);
-
-
         }
     }
 }
