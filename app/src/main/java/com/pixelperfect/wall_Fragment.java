@@ -8,11 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link wall_Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class wall_Fragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -52,6 +47,8 @@ public class wall_Fragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+
         }
     }
 
