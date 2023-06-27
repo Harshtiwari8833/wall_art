@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -29,14 +30,6 @@ public class cat_Fragment extends Fragment {
     public cat_Fragment() {
     }
 
-    public static cat_Fragment newInstance(String param1, String param2) {
-        cat_Fragment fragment = new cat_Fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,7 +39,8 @@ public class cat_Fragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
 
             recyclerView = recyclerView.findViewById(R.id.recycle);
-            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
 
             arrayList.add(new catModel("Nature",R.drawable.nature1));
             arrayList.add(new catModel("City",R.drawable.nature1));
@@ -65,9 +59,10 @@ public class cat_Fragment extends Fragment {
             arrayList.add(new catModel("Shapes",R.drawable.nature1));
             arrayList.add(new catModel("Minimal",R.drawable.nature1));
 
-            RecyclerAdapterCAT adapter = new RecyclerAdapterCAT(this,arrayList);
+            RecyclerAdapterCAT adapter = new RecyclerAdapterCAT(getContext(),arrayList);
             recyclerView.setAdapter(adapter);
 
+            Toast.makeText(getContext(), "Working", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -76,5 +71,7 @@ public class cat_Fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_cat_, container, false);
+
+
     }
 }

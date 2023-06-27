@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -41,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
         btnView.setSelectedItemId(R.id.wall);
 
     }
