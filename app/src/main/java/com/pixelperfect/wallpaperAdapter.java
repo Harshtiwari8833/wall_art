@@ -18,6 +18,7 @@ public class wallpaperAdapter extends RecyclerView.Adapter<wallpaperAdapter.View
     Context context;
     ArrayList<wallModel> list;
     public wallpaperAdapter(Context context, ArrayList<wallModel> list){
+        this.context = context;
         this.list= list;
     }
     @NonNull

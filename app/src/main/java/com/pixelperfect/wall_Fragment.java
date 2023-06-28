@@ -25,8 +25,8 @@ public class wall_Fragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_wall_, container, false);
 
         recycler = view.findViewById(R.id.wall_recycler);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
-        recycler.setLayoutManager(linearLayoutManager);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        recycler.setLayoutManager(gridLayoutManager);
 
         array.add(new wallModel(R.drawable.wall1));
         array.add(new wallModel(R.drawable.wall2));
