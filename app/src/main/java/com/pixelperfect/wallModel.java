@@ -3,7 +3,8 @@ package com.pixelperfect;
 public class wallModel {
     int img;
 
-    public wallModel(int img) {
+    public wallModel(int img)
+    {
         this.img = img;
     }
 

@@ -28,33 +28,33 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
 
-                if(id==R.id.wall){
-                    loadfrag(new wall_Fragment(),true);
-                } else if (id==R.id.cat) {
-                    loadfrag(new cat_Fragment(),false);
+                if (id == R.id.wall) {
+                    loadfrag(new wall_Fragment(), false);
+                } else if (id == R.id.cat) {
+                    loadfrag(new cat_Fragment(), false);
+                } else if (id == R.id.fav) {
+                    loadfrag(new fav_Fragment(), false);
+                }else {
+                    loadfrag(new profile_Fragment(), true);
                 }
-                else if (id==R.id.fav) {
-                    loadfrag(new fav_Fragment(),false);
-                }
-                else
-                    loadfrag(new profile_Fragment(),false);
-
                 return true;
             }
         });
-        btnView.setSelectedItemId(R.id.wall);
+
+        btnView.setSelectedItemId(R.id.profile);
 
     }
 
-    public void loadfrag(Fragment fragment, boolean flag){
+    public void loadfrag(Fragment fragment, boolean flag) {
 
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         if (flag) {
             ft.add(R.id.frame, fragment);
-        }
-        else
+        } else
             ft.replace(R.id.frame, fragment);
+
         ft.commit();
     }
+
 }
