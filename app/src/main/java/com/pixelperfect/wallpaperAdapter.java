@@ -28,7 +28,7 @@ public class wallpaperAdapter extends RecyclerView.Adapter<wallpaperAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull wallpaperAdapter.ViewHolder holder, int position) {
-//        holder.img.;
+//
     }
 
     @Override

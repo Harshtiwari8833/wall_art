@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.PixelPerfect" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#7393B3</item>
-        <item name="colorPrimaryVariant">#7393B3</item>
+        <item name="colorPrimary">#B3A9E7</item>
+        <item name="colorPrimaryVariant">#CBC5EA</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">#7393B3</item>
