@@ -3,6 +3,7 @@ package com.pixelperfect;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,6 +24,7 @@ public class wall_Fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_wall_, container, false);
+        //toolbar
 
         recycler = view.findViewById(R.id.wall_recycler);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
