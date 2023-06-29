@@ -45,8 +45,8 @@ public class cat_Fragment extends Fragment {
             arrayList.add(new catModel("Space", R.drawable.space0));
             arrayList.add(new catModel("SuperHeros", R.drawable.superhero0));
             arrayList.add(new catModel("iOS", R.drawable.ios0));
-            arrayList.add(new catModel("Solid", R.drawable.solid0));
-            arrayList.add(new catModel("Abstract", R.drawable.abst0));
+            arrayList.add(new catModel("Solid", R.drawable.solid02));
+            arrayList.add(new catModel("Abstract", R.drawable.abst02));
             arrayList.add(new catModel("Shapes", R.drawable.shape0));
             arrayList.add(new catModel("Minimal", R.drawable.minimal0));
 
