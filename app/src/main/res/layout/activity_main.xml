@@ -15,16 +15,14 @@
             android:id="@+id/app_bar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#fff"
-            app:title="WALL-ART" />
+            android:background="#01579B"
+            app:title="WALL-ART"
+            app:titleTextColor="#fff"/>
 
     </com.google.android.material.appbar.AppBarLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-
-
 
 
     <FrameLayout
@@ -38,6 +36,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:menu="@menu/nav_items"
+        app:itemTextColor="#1A237E"
+        android:outlineAmbientShadowColor="#6480AC"
+        android:outlineSpotShadowColor="#fff"
         android:id="@+id/btnview"/>
 
     </RelativeLayout>

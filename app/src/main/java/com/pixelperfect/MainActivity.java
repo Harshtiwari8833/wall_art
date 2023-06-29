@@ -39,19 +39,19 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
 
                 if (id == R.id.wall) {
-                    loadfrag(new wall_Fragment(), false);
+                    loadfrag(new wall_Fragment(), true);
                 } else if (id == R.id.cat) {
                     loadfrag(new cat_Fragment(), false);
                 } else if (id == R.id.fav) {
                     loadfrag(new fav_Fragment(), false);
                 }else {
-                    loadfrag(new profile_Fragment(), true);
+                    loadfrag(new profile_Fragment(), false);
                 }
                 return true;
             }
         });
 
-        btnView.setSelectedItemId(R.id.profile);
+        btnView.setSelectedItemId(R.id.wall);
 
     }
 
