@@ -39,13 +39,13 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
 
                 if (id == R.id.wall) {
-                    loadfrag(new wall_Fragment(), true);
+                    loadfrag(new wall_Fragment());
                 } else if (id == R.id.cat) {
-                    loadfrag(new cat_Fragment(), false);
+                    loadfrag(new cat_Fragment());
                 } else if (id == R.id.fav) {
-                    loadfrag(new fav_Fragment(), false);
+                    loadfrag(new fav_Fragment());
                 }else {
-                    loadfrag(new profile_Fragment(), false);
+                    loadfrag(new profile_Fragment());
                 }
                 return true;
             }
@@ -55,14 +55,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void loadfrag(Fragment fragment, boolean flag) {
+    public void loadfrag(Fragment fragment) {
 
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        if (flag) {
-            ft.add(R.id.frame, fragment);
-        } else
-            ft.replace(R.id.frame, fragment);
+        ft.replace(R.id.frame, fragment);
 
         ft.commit();
     }

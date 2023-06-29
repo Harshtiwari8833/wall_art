@@ -36,9 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:menu="@menu/nav_items"
-        app:itemTextColor="#1A237E"
-        android:outlineAmbientShadowColor="#6480AC"
-        android:outlineSpotShadowColor="#fff"
+        android:background="#01579B"
+        app:itemTextColor="#F3F0F0"
         android:id="@+id/btnview"/>
 
     </RelativeLayout>
