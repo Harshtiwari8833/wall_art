@@ -1,23 +1,33 @@
 package com.pixelperfect;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
+import java.util.List;
 import java.util.zip.Inflater;
 
 
 public class wallpaperAdapter extends RecyclerView.Adapter<wallpaperAdapter.ViewHolder>{
     Context context;
-    ArrayList<wallModel> list;
-    public wallpaperAdapter(Context context, ArrayList<wallModel> list){
+    List<String> list ;
+    private Bitmap bitmap;
+    public wallpaperAdapter(Context context, List<String> list){
         this.context = context;
         this.list= list;
     }
@@ -31,8 +41,16 @@ public class wallpaperAdapter extends RecyclerView.Adapter<wallpaperAdapter.View
     }
 
     @Override
-    public void onBindViewHolder(@NonNull wallpaperAdapter.ViewHolder holder, int position) {
-       holder.img.setImageResource(list.get(position).img);
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
+        Glide.with(context).load(list.get(position)).into(holder.wall_img);
+        holder.wall_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, "hello", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     @Override
@@ -41,11 +59,12 @@ public class wallpaperAdapter extends RecyclerView.Adapter<wallpaperAdapter.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView img;
+        ImageView wall_img;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            img = itemView.findViewById(R.id.wall_img);
+            wall_img = itemView.findViewById(R.id.wall_img);
         }
     }
-}
+
+    }

@@ -1,18 +1,19 @@
 package com.pixelperfect;
 
 public class wallModel {
-    int img;
+    String img;
 
-    public wallModel(int img)
+    public wallModel(String img)
     {
         this.img = img;
     }
 
-    public int getImg() {
+    public String getImg() {
         return img;
     }
 
-    public void setImg(int img) {
+    public void setImg(String img) {
         this.img = img;
     }
+    public  wallModel( ){}
 }
