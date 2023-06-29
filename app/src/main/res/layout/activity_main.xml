@@ -13,11 +13,11 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/app_bar"
+            android:background="#fff"
+
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#01579B"
-            app:title="WALL-ART"
-            app:titleTextColor="#fff"/>
+            app:title="WALL-ART" />
 
     </com.google.android.material.appbar.AppBarLayout>
     <RelativeLayout
@@ -36,8 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:menu="@menu/nav_items"
-        android:background="#01579B"
-        app:itemTextColor="#F3F0F0"
+
         android:id="@+id/btnview"/>
 
     </RelativeLayout>
