@@ -7,10 +7,56 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".cat_Fragment">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="56dp"
+       android:gravity="center_vertical"
+       android:orientation="vertical">
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="WALL-ART"
+          android:layout_marginHorizontal="15dp"
+          android:textSize="20dp"
+          android:textColor="@color/black"
+          android:textStyle="bold"/>
+   </LinearLayout>
+   <androidx.core.widget.NestedScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:isScrollContainer="true">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="50dp"
+          android:layout_marginLeft="15dp"
+          android:text="Categories"
+          android:textStyle="bold"
+          android:textColor="@color/black"
+          android:textSize="39dp"/>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="5dp"
+          android:layout_marginBottom="22dp"
+          android:layout_marginLeft="15dp"
+          android:text="Unleash Your Walls' Potential"
+          android:textSize="18dp"/>
 
    <androidx.recyclerview.widget.RecyclerView
        android:layout_width="match_parent"
        android:layout_height="match_parent"
+       android:layout_marginHorizontal="10dp"
+       android:nestedScrollingEnabled="false"
+       android:isScrollContainer="true"
        android:id="@+id/recycle"/>
+
+   </LinearLayout>
+   </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

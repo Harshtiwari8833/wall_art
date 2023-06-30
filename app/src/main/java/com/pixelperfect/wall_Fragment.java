@@ -50,6 +50,7 @@ public class wall_Fragment extends Fragment {
                     adapter1 = new wallpaperAdapter(getContext(),array);
                     recycler.setLayoutManager(gridLayoutManager);
                     recycler.setAdapter(adapter1);
+                    recycler.setNestedScrollingEnabled(false);
 
                 }
 

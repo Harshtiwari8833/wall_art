@@ -3,7 +3,7 @@
     <style name="Theme.PixelPerfect" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#000000</item>
-        <item name="colorPrimaryVariant">#8F8F8F</item>
+        <item name="colorPrimaryVariant">#D5D3D3</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">#fff</item>
