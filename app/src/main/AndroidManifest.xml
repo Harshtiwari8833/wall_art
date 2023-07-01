@@ -12,6 +12,13 @@
         android:theme="@style/Theme.PixelPerfect"
         tools:targetApi="31">
         <activity
+            android:name=".OpenWallActivity"
+            android:theme="@style/FullScreen"
+            android:exported="false" />
+        <activity
+            android:name=".SeeWallpaperActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
@@ -20,15 +27,7 @@
         <activity
             android:name=".OnboardingActivity"
             android:exported="false" />
-        <activity
-            android:name=".test_nikhil"
-            android:exported="false" />
-        <activity
-            android:name=".testharsh"
-            android:exported="false" />
-        <activity
-            android:name=".test"
-            android:exported="false" />
+
         <activity
             android:name=".SplashActivity"
             android:exported="true">

@@ -24,14 +24,29 @@
             android:textStyle="bold"/>
     </LinearLayout>
 
-<androidx.core.widget.NestedScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:isScrollContainer="true">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+
+
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:isScrollContainer="true">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+
+
+
 
         <TextView
         android:layout_width="wrap_content"
@@ -51,16 +66,30 @@
             android:text="Discover the best free wallpapers"
             android:textSize="18dp"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_marginHorizontal="10dp"
-        android:layout_height="fill_parent"
-        android:nestedScrollingEnabled="false"
-        android:isScrollContainer="true"
-        android:id="@+id/wall_recycler">
 
-    </androidx.recyclerview.widget.RecyclerView>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/wall_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:isScrollContainer="true"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="10dp">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
     </LinearLayout>
+
+
 </androidx.core.widget.NestedScrollView>
+
+
+
+    </LinearLayout>
 
 </LinearLayout>

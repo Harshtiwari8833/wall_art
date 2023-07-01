@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -24,6 +25,7 @@ import java.util.List;
 public class wall_Fragment extends Fragment {
 
     RecyclerView recycler;
+    private ProgressBar progressBar;
     String url;
     wallpaperAdapter adapter1;
     @Override
@@ -35,6 +37,7 @@ public class wall_Fragment extends Fragment {
 
         recycler = view.findViewById(R.id.wall_recycler);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+
 
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("wallpapers");
@@ -50,6 +53,7 @@ public class wall_Fragment extends Fragment {
                     adapter1 = new wallpaperAdapter(getContext(),array);
                     recycler.setLayoutManager(gridLayoutManager);
                     recycler.setAdapter(adapter1);
+
                     recycler.setNestedScrollingEnabled(false);
 
                 }
@@ -57,6 +61,7 @@ public class wall_Fragment extends Fragment {
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
 
+                    Toast.makeText(getContext(), "something went wrong!", Toast.LENGTH_SHORT).show();
                 }
 
             });

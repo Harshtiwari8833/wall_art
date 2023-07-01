@@ -48,6 +48,9 @@ public class wallpaperAdapter extends RecyclerView.Adapter<wallpaperAdapter.View
             @Override
             public void onClick(View view) {
                 Toast.makeText(context, "hello", Toast.LENGTH_SHORT).show();
+                
+                Intent intent = new Intent(context,OpenWallActivity.class);
+                context.startActivity(intent);
             }
         });
 
@@ -58,7 +61,7 @@ public class wallpaperAdapter extends RecyclerView.Adapter<wallpaperAdapter.View
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView wall_img;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
