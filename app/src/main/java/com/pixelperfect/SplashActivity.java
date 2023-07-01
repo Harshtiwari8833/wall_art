@@ -30,7 +30,7 @@ public class SplashActivity extends AppCompatActivity {
                 boolean check_onboarding = pref3.getBoolean("flag4", false);
 
                 if (check_onboarding && !check_signup) {
-                    Intent intent1 = new Intent(SplashActivity.this, SignupActivity.class);
+                    Intent intent1 = new Intent(SplashActivity.this, SignInGoogleActivity.class);
                     finish();
                     startActivity(intent1);
                 } else if (check_onboarding && check) {
