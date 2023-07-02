@@ -54,7 +54,7 @@ public class wall_Fragment extends Fragment {
                     recycler.setLayoutManager(gridLayoutManager);
                     recycler.setAdapter(adapter1);
 
-                    recycler.setNestedScrollingEnabled(false);
+                    recycler.setNestedScrollingEnabled(true);
 
                 }
 

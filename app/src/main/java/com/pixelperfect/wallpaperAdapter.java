@@ -36,7 +36,6 @@ public class wallpaperAdapter extends RecyclerView.Adapter<wallpaperAdapter.View
     public wallpaperAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(context).inflate(R.layout.wall_layout, parent, false);
-
         return new ViewHolder(view);
     }
 
@@ -47,7 +46,7 @@ public class wallpaperAdapter extends RecyclerView.Adapter<wallpaperAdapter.View
         holder.wall_img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "hello", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "hello app under-construction", Toast.LENGTH_SHORT).show();
                 
                 Intent intent = new Intent(context,OpenWallActivity.class);
                 context.startActivity(intent);
