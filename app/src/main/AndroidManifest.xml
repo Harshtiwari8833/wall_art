@@ -12,9 +12,12 @@
         android:theme="@style/Theme.PixelPerfect"
         tools:targetApi="31">
         <activity
-            android:name=".OpenWallActivity"
-            android:theme="@style/FullScreen"
+            android:name=".About_intent"
             android:exported="false" />
+        <activity
+            android:name=".OpenWallActivity"
+            android:exported="false"
+            android:theme="@style/FullScreen" />
         <activity
             android:name=".SeeWallpaperActivity"
             android:exported="false" />
@@ -27,7 +30,6 @@
         <activity
             android:name=".OnboardingActivity"
             android:exported="false" />
-
         <activity
             android:name=".SplashActivity"
             android:exported="true">

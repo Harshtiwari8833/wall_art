@@ -1,4 +1,4 @@
-package com.pixelperfect;
+/* package com.pixelperfect;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -49,3 +49,5 @@ public class profile_adapter extends RecyclerView.Adapter<profile_adapter.ViewHo
         }
     }
 }
+
+ */

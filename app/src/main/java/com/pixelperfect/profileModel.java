@@ -1,4 +1,4 @@
-package com.pixelperfect;
+/* package com.pixelperfect;
 
 import android.widget.TextView;
 
@@ -18,3 +18,5 @@ public class profileModel {
         this.txt = txt;
     }
 }
+
+ */

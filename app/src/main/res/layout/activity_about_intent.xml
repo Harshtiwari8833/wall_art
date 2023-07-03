@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".About_intent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WALL-ART"
+            android:layout_marginHorizontal="15dp"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:isScrollContainer="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="About"
+                android:textSize="40dp"
+                android:padding="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Welcome to our wallpaper application! We are dedicated to providing you with a captivating and immersive visual experience for your mobile device or desktop. Our app is designed to cater to your personal style and preferences, offering a vast collection of stunning wallpapers that will transform the look and feel of your device."
+                android:padding="5dp"
+                android:textSize="17dp"
+                android:layout_marginLeft="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="At our core, we believe that a wallpaper can be much more than just a background image. It has the power to inspire, motivate, and evoke emotions. That's why we curate a diverse range of high-quality wallpapers, carefully handpicked to suit every taste and mood. Whether you're seeking vibrant landscapes, minimalist designs, intricate patterns, or captivating illustrations, our app has something for everyone."
+                android:padding="5dp"
+                android:textSize="17dp"
+                android:layout_marginLeft="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="We understand the importance of customization and self-expression. With our wallpaper application, you have the freedom to explore an extensive library of categories and themes. Whether you're an art enthusiast, nature lover, or a fan of the latest trends, our intuitive interface makes it effortless to discover and download wallpapers that resonate with your unique style."
+                android:padding="5dp"
+                android:textSize="17dp"
+                android:layout_marginLeft="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="We strive to provide a seamless user experience, with a simple and user-friendly interface that allows you to effortlessly browse, search, and set wallpapers with just a few taps. Our app is designed to optimize image quality and resolution for various screen sizes, ensuring that your wallpapers look stunning on your device."
+                android:padding="5dp"
+                android:textSize="17dp"
+                android:layout_marginLeft="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Stay ahead of the curve with our regular updates, as we continuously add new wallpapers to keep your collection fresh and exciting. We also offer a personalized recommendations feature that suggests wallpapers based on your preferences and browsing history, so you can always stay inspired and discover new favorites."
+                android:padding="5dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="In addition to our extensive wallpaper collection, we believe in fostering a vibrant and engaged community. Join our community of fellow wallpaper enthusiasts, where you can share your favorite wallpapers, engage in discussions, and even submit your own creations for others to enjoy."
+                android:padding="5dp"
+                android:textSize="17dp"
+                android:layout_marginLeft="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Thank you for choosing our wallpaper application to enhance your device's aesthetics. We hope that our carefully curated wallpapers will bring joy, inspiration, and a touch of artistry to your everyday life. Start exploring now and let your device reflect your unique style!"
+                android:padding="5dp"
+                android:textSize="17dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="20dp"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
