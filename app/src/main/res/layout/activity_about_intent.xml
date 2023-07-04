@@ -46,48 +46,18 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Welcome to our wallpaper application! We are dedicated to providing you with a captivating and immersive visual experience for your mobile device or desktop. Our app is designed to cater to your personal style and preferences, offering a vast collection of stunning wallpapers that will transform the look and feel of your device."
+                android:text="Welcome to our phone wallpaper application, designed to transform the aesthetics of your mobile device. With our app, you can personalize your phone and make it uniquely yours. Discover an extensive collection of captivating wallpapers, ranging from stunning landscapes to trendy designs and inspiring quotes. Our intuitive interface allows you to effortlessly browse, preview, and set wallpapers that suit your mood and style."
                 android:padding="5dp"
                 android:textSize="17dp"
                 android:layout_marginLeft="8dp"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="At our core, we believe that a wallpaper can be much more than just a background image. It has the power to inspire, motivate, and evoke emotions. That's why we curate a diverse range of high-quality wallpapers, carefully handpicked to suit every taste and mood. Whether you're seeking vibrant landscapes, minimalist designs, intricate patterns, or captivating illustrations, our app has something for everyone."
-                android:padding="5dp"
-                android:textSize="17dp"
-                android:layout_marginLeft="8dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="We understand the importance of customization and self-expression. With our wallpaper application, you have the freedom to explore an extensive library of categories and themes. Whether you're an art enthusiast, nature lover, or a fan of the latest trends, our intuitive interface makes it effortless to discover and download wallpapers that resonate with your unique style."
-                android:padding="5dp"
-                android:textSize="17dp"
-                android:layout_marginLeft="8dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="We strive to provide a seamless user experience, with a simple and user-friendly interface that allows you to effortlessly browse, search, and set wallpapers with just a few taps. Our app is designed to optimize image quality and resolution for various screen sizes, ensuring that your wallpapers look stunning on your device."
-                android:padding="5dp"
-                android:textSize="17dp"
-                android:layout_marginLeft="8dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Stay ahead of the curve with our regular updates, as we continuously add new wallpapers to keep your collection fresh and exciting. We also offer a personalized recommendations feature that suggests wallpapers based on your preferences and browsing history, so you can always stay inspired and discover new favorites."
-                android:padding="5dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="In addition to our extensive wallpaper collection, we believe in fostering a vibrant and engaged community. Join our community of fellow wallpaper enthusiasts, where you can share your favorite wallpapers, engage in discussions, and even submit your own creations for others to enjoy."
-                android:padding="5dp"
-                android:textSize="17dp"
-                android:layout_marginLeft="8dp"/>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:text="We believe that your phone's wallpaper should reflect your personality and inspire you every time you unlock your device. That's why we offer regular updates with fresh and vibrant wallpapers to keep your phone looking new and exciting. Join our community of like-minded individuals, where you can share your favorite wallpapers and get inspired by others. Enhance your phone's visual experience, express yourself, and make a statement with our phone wallpaper application."
+               android:textSize="17dp"
+               android:padding="5dp"
+               android:layout_marginLeft="8dp"/>
 
             <TextView
                 android:layout_width="match_parent"

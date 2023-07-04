@@ -1,6 +1,7 @@
 package com.pixelperfect;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
@@ -17,6 +18,8 @@ import java.util.ArrayList;
 public class profile_Fragment extends Fragment {
 
    RecyclerView recyclerView;
+
+   String s;
 
    CardView about, policy, logout, rate;
   /* ArrayList<profileModel> arrayList = new ArrayList<>(); */
@@ -41,6 +44,24 @@ public class profile_Fragment extends Fragment {
             }
         });
 
+        policy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(getActivity(), activity_privacy.class);
+                startActivity(intent1);
+            }
+        });
+
+        rate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=one4studio.wallpaper.one4wall");
+                Intent intent2 = new Intent(Intent.ACTION_VIEW,uri);
+                startActivity(intent2);
+
+            }
+        });
         return view;
 
 
