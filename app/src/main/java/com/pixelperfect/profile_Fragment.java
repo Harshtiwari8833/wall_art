@@ -52,6 +52,14 @@ public class profile_Fragment extends Fragment {
             }
         });
 
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent3 = new Intent(getActivity(),SignupActivity.class);
+                startActivity(intent3);
+            }
+        });
+
         rate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,6 +67,7 @@ public class profile_Fragment extends Fragment {
                 Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=one4studio.wallpaper.one4wall");
                 Intent intent2 = new Intent(Intent.ACTION_VIEW,uri);
                 startActivity(intent2);
+
 
             }
         });

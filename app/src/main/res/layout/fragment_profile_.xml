@@ -60,7 +60,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
+                android:layout_height="75dp"
                 app:cardCornerRadius="10dp"
                 app:cardUseCompatPadding="true"
                 android:backgroundTint="#DAD8D8"
@@ -73,12 +73,13 @@
                     android:gravity="center_vertical"
                     android:layout_marginLeft="8dp"
                     android:textSize="28dp"/>
+                
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
+                android:layout_height="75dp"
                 app:cardCornerRadius="10dp"
                 app:cardUseCompatPadding="true"
                 android:backgroundTint="#DAD8D8"
@@ -95,7 +96,7 @@
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
+                android:layout_height="75dp"
                 app:cardCornerRadius="10dp"
                 app:cardUseCompatPadding="true"
                 android:backgroundTint="#DAD8D8"
@@ -112,7 +113,7 @@
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
+                android:layout_height="75dp"
                 app:cardCornerRadius="10dp"
                 app:cardUseCompatPadding="true"
                 android:backgroundTint="#DAD8D8"
