@@ -74,7 +74,7 @@ public class OnboardingActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = pref3.edit();
                     editor.putBoolean("flag4", true);
                     editor.apply();
-                    startActivity(new Intent(getApplicationContext(),SignupActivity.class));
+                    startActivity(new Intent(getApplicationContext(),SignInGoogleActivity.class));
                     finish();
                 }
             }
