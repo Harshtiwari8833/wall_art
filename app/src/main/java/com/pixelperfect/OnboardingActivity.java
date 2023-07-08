@@ -33,7 +33,7 @@ public class OnboardingActivity extends AppCompatActivity {
         boolean check_onboarding = pref3.getBoolean("flag4", false);
 
         if(check_onboarding){
-            Intent intent = new Intent(OnboardingActivity.this, SignupActivity.class);
+            Intent intent = new Intent(OnboardingActivity.this, MainActivity.class);
             finish();
             startActivity(intent);
 

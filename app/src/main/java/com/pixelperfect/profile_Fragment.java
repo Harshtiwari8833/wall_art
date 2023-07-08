@@ -55,8 +55,7 @@ public class profile_Fragment extends Fragment {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent3 = new Intent(getActivity(),SignupActivity.class);
-                startActivity(intent3);
+
             }
         });
 
