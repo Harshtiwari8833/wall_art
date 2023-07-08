@@ -25,9 +25,9 @@ import java.util.zip.Inflater;
 
 public class wallpaperAdapter extends RecyclerView.Adapter<wallpaperAdapter.ViewHolder>{
     Context context;
-    List<String> list ;
+    List<wallModel> list ;
     private Bitmap bitmap;
-    public wallpaperAdapter(Context context, List<String> list){
+    public wallpaperAdapter(Context context, List<wallModel> list){
         this.context = context;
         this.list= list;
     }
@@ -42,7 +42,7 @@ public class wallpaperAdapter extends RecyclerView.Adapter<wallpaperAdapter.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        Glide.with(context).load(list.get(position)).into(holder.wall_img);
+        Glide.with(context).load(list.get(position).url).into(holder.wall_img);
         holder.wall_img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
