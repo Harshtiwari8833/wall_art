@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,12 +26,31 @@ public class OpenWallActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open_wall);
-
+   int id = getIntent().getExtras().getInt("wall_id");
+        String wallid = String.valueOf(id);
          viewPager = findViewById(R.id.viewPager);
         adapter= new openWallAdapter(this,list);
 
         viewPager.setAdapter(adapter);
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("wallpaper");
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("wallpaper").child(wallid);
+
+
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Toast.makeText(OpenWallActivity.this, snapshot.toString(), Toast.LENGTH_SHORT).show();
+                list.add(snapshot.getValue(wallModel.class));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

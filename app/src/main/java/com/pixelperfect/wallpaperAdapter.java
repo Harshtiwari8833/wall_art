@@ -1,5 +1,6 @@
 package com.pixelperfect;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -40,15 +41,18 @@ public class wallpaperAdapter extends RecyclerView.Adapter<wallpaperAdapter.View
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
         Glide.with(context).load(list.get(position).url).into(holder.wall_img);
+
+
         holder.wall_img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "hello app under-construction", Toast.LENGTH_SHORT).show();
-                
+
+                int id = list.get(position).id;
                 Intent intent = new Intent(context,OpenWallActivity.class);
+                intent.putExtra("wall_id",id);
                 context.startActivity(intent);
             }
         });
