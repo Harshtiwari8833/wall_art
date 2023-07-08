@@ -40,20 +40,22 @@ public class wall_Fragment extends Fragment {
 
 
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("wallpapers");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("wallpaper");
             reference.addValueEventListener(new ValueEventListener() {
-                List<String> array = new ArrayList<>();
+                List<wallModel> array = new ArrayList<>();
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                        String data =   dataSnapshot.getValue(String.class);
+                        wallModel data =   dataSnapshot.getValue(wallModel.class);
                         array.add(data);
+                        Toast.makeText(getContext(), dataSnapshot.toString(), Toast.LENGTH_SHORT).show();
+
                     }
                     adapter1 = new wallpaperAdapter(getContext(),array);
                     recycler.setLayoutManager(gridLayoutManager);
                     recycler.setAdapter(adapter1);
-
+                     adapter1.notifyDataSetChanged();
                     recycler.setNestedScrollingEnabled(true);
 
                 }

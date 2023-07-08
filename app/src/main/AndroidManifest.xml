@@ -15,15 +15,15 @@
             android:name=".activity_privacy"
             android:exported="false" />
         <activity
+            android:name=".SignInGoogleActivity"
+            android:exported="false" />
+        <activity
             android:name=".About_intent"
             android:exported="false" />
         <activity
             android:name=".OpenWallActivity"
             android:exported="false"
             android:theme="@style/FullScreen" />
-        <activity
-            android:name=".SeeWallpaperActivity"
-            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />

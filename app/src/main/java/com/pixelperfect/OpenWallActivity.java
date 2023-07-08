@@ -18,7 +18,7 @@ import java.util.List;
 
 public class OpenWallActivity extends AppCompatActivity {
   ViewPager2 viewPager;
-  List<String> list = new ArrayList<>();
+  List<wallModel> list = new ArrayList<>();
   openWallAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +29,15 @@ public class OpenWallActivity extends AppCompatActivity {
         adapter= new openWallAdapter(this,list);
 
         viewPager.setAdapter(adapter);
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("wallpapers");
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("wallpaper");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    list.add(dataSnapshot.getValue(String.class));
+                    list.add(dataSnapshot.getValue(wallModel.class));
                 }
-                adapter.notifyDataSetChanged();
+
             }
 
             @Override

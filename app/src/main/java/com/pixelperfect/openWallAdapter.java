@@ -18,12 +18,12 @@ public class openWallAdapter extends RecyclerView.Adapter<openWallAdapter.wallVi
 Context context;
 
 
-    public openWallAdapter(Context context, List<String> list) {
+    public openWallAdapter(Context context, List<wallModel> list) {
         this.context = context;
         this.list = list;
     }
 
-    List<String> list;
+    List<wallModel> list;
 
     @NonNull
     @Override
@@ -35,7 +35,7 @@ Context context;
 
     @Override
     public void onBindViewHolder(@NonNull openWallAdapter.wallViewHolder holder, int position) {
-        Glide.with(context).load(list.get(position)).into(holder.wallpaper_img);
+        Glide.with(context).load(list.get(position).url).into(holder.wallpaper_img);
     }
 
     @Override

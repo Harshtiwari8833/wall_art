@@ -77,7 +77,7 @@ Button button;
     }
 
     void navigateToSecondActivity(){
-        Intent intent = new Intent(SignInGoogleActivity.this, GoogleSigninFetchdetialsActivity.class);
+        Intent intent = new Intent(SignInGoogleActivity.this, MainActivity.class);
         startActivity(intent);
     }
 
