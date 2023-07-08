@@ -41,12 +41,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:orientation="vertical">
-
-
-
-
 
         <TextView
         android:layout_width="wrap_content"
@@ -66,10 +61,7 @@
             android:text="Discover the best free wallpapers"
             android:textSize="18dp"/>
 
-
-
-
-                <androidx.recyclerview.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/wall_recycler"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
