@@ -35,13 +35,12 @@ public class OpenWallActivity extends AppCompatActivity {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("wallpaper");
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("wallpaper").child(wallid);
 
-
-
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Toast.makeText(OpenWallActivity.this, snapshot.toString(), Toast.LENGTH_SHORT).show();
                 list.add(snapshot.getValue(wallModel.class));
+
             }
 
             @Override
@@ -59,7 +58,13 @@ public class OpenWallActivity extends AppCompatActivity {
                     list.add(dataSnapshot.getValue(wallModel.class));
                 }
 
+
+                for (int i = id; i>0; i-- ){
+                    list.remove(i);
+                }
+
             }
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -68,6 +73,11 @@ public class OpenWallActivity extends AppCompatActivity {
         });
 
 
+
+
+        viewPager = findViewById(R.id.viewPager);
+        adapter= new openWallAdapter(this,list);
+        viewPager.setAdapter(adapter);
 
 
     }
