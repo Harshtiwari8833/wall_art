@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".cat_Fragment">
    <LinearLayout
@@ -21,6 +21,7 @@
           android:textColor="@color/black"
           android:textStyle="bold"/>
    </LinearLayout>
+
    <androidx.core.widget.NestedScrollView
        android:layout_width="match_parent"
        android:layout_height="match_parent"
@@ -48,15 +49,547 @@
           android:text="Unleash Your Walls' Potential"
           android:textSize="18dp"/>
 
-   <androidx.recyclerview.widget.RecyclerView
+
+
+   <LinearLayout
        android:layout_width="match_parent"
        android:layout_height="match_parent"
-       android:layout_marginHorizontal="10dp"
-       android:nestedScrollingEnabled="false"
-       android:isScrollContainer="true"
-       android:id="@+id/recycle"/>
+       android:orientation="vertical">
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="match_parent"
+          android:layout_height="175dp"
+          android:id="@+id/card_nature"
+          app:cardCornerRadius="15dp"
+          app:cardUseCompatPadding="true">
+
+         <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="end"
+             android:background="#046875">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/img"
+                android:src="@drawable/nature0"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nature"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:textColor="#fff"
+                android:textSize="32dp"
+                android:id="@+id/txt"
+                android:textStyle="bold"/>
+
+         </FrameLayout>
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="match_parent"
+          android:layout_height="175dp"
+          android:id="@+id/card_city"
+          app:cardCornerRadius="15dp"
+          app:cardUseCompatPadding="true">
+
+         <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="end"
+             android:background="#046875">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/city0"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="City"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:textColor="#fff"
+                android:textSize="32dp"
+                android:textStyle="bold"/>
+
+         </FrameLayout>
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="match_parent"
+          android:layout_height="175dp"
+          android:id="@+id/card_animal"
+          app:cardCornerRadius="15dp"
+          app:cardUseCompatPadding="true">
+
+         <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="end"
+             android:background="#046875">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/animal0"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Animal"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:textColor="#fff"
+                android:textSize="32dp"
+                android:textStyle="bold"/>
+
+         </FrameLayout>
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="match_parent"
+          android:layout_height="175dp"
+          android:id="@+id/card_landscape"
+          app:cardCornerRadius="15dp"
+          app:cardUseCompatPadding="true">
+
+         <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="end"
+             android:background="#046875">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/landscape0"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Landscaoe"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:textColor="#fff"
+                android:textSize="32dp"
+                android:textStyle="bold"/>
+
+         </FrameLayout>
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="match_parent"
+          android:layout_height="175dp"
+          android:id="@+id/card_amoled"
+          app:cardCornerRadius="15dp"
+          app:cardUseCompatPadding="true">
+
+         <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="end"
+             android:background="#046875">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/amoled0"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amoled"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:textColor="#fff"
+                android:textSize="32dp"
+                android:textStyle="bold"/>
+
+         </FrameLayout>
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="match_parent"
+          android:layout_height="175dp"
+          android:id="@+id/card_dark"
+          app:cardCornerRadius="15dp"
+          app:cardUseCompatPadding="true">
+
+         <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="end"
+             android:background="#046875">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/dark0"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dark"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:textColor="#fff"
+                android:textSize="32dp"
+                android:textStyle="bold"/>
+
+         </FrameLayout>
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="match_parent"
+          android:layout_height="175dp"
+          android:id="@+id/card_anime"
+          app:cardCornerRadius="15dp"
+          app:cardUseCompatPadding="true">
+
+         <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="end"
+             android:background="#046875">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/anime0"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anime"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:textColor="#fff"
+                android:textSize="32dp"
+                android:textStyle="bold"/>
+
+         </FrameLayout>
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="match_parent"
+          android:layout_height="175dp"
+          android:id="@+id/card_cars"
+          app:cardCornerRadius="15dp"
+          app:cardUseCompatPadding="true">
+
+         <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="end"
+             android:background="#046875">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/cars0"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cars"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:textColor="#fff"
+                android:textSize="32dp"
+                android:textStyle="bold"/>
+
+         </FrameLayout>
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="match_parent"
+          android:layout_height="175dp"
+          android:id="@+id/card_sports"
+          app:cardCornerRadius="15dp"
+          app:cardUseCompatPadding="true">
+
+         <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="end"
+             android:background="#046875">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/sports0"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sports"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:textColor="#fff"
+                android:textSize="32dp"
+                android:textStyle="bold"/>
+
+         </FrameLayout>
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="match_parent"
+          android:layout_height="175dp"
+          android:id="@+id/card_space"
+          app:cardCornerRadius="15dp"
+          app:cardUseCompatPadding="true">
+
+         <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="end"
+             android:background="#046875">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/space0"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Space"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:textColor="#fff"
+                android:textSize="32dp"
+                android:textStyle="bold"/>
+
+         </FrameLayout>
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="match_parent"
+          android:layout_height="175dp"
+          android:id="@+id/card_superhero"
+          app:cardCornerRadius="15dp"
+          app:cardUseCompatPadding="true">
+
+         <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="end"
+             android:background="#046875">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/superhero0"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SuperHeros"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:textColor="#fff"
+                android:textSize="32dp"
+                android:textStyle="bold"/>
+
+         </FrameLayout>
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="match_parent"
+          android:layout_height="175dp"
+          android:id="@+id/card_ios"
+          app:cardCornerRadius="15dp"
+          app:cardUseCompatPadding="true">
+
+         <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="end"
+             android:background="#046875">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ios0"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="iOS"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:textColor="#fff"
+                android:textSize="32dp"
+                android:textStyle="bold"/>
+
+         </FrameLayout>
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="match_parent"
+          android:layout_height="175dp"
+          android:id="@+id/card_solid"
+          app:cardCornerRadius="15dp"
+          app:cardUseCompatPadding="true">
+
+         <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="end"
+             android:background="#046875">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/solid02"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Solid"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:textColor="#fff"
+                android:textSize="32dp"
+                android:textStyle="bold"/>
+
+         </FrameLayout>
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="match_parent"
+          android:layout_height="175dp"
+          android:id="@+id/card_abstract"
+          app:cardCornerRadius="15dp"
+          app:cardUseCompatPadding="true">
+
+         <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="end"
+             android:background="#046875">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/abst02"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Abstract"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:textColor="#fff"
+                android:textSize="32dp"
+                android:textStyle="bold"/>
+
+         </FrameLayout>
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="match_parent"
+          android:layout_height="175dp"
+          android:id="@+id/card_shapes"
+          app:cardCornerRadius="15dp"
+          app:cardUseCompatPadding="true">
+
+         <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="end"
+             android:background="#046875">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/shape0"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shapes"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:textColor="#fff"
+                android:textSize="32dp"
+                android:textStyle="bold"/>
+
+         </FrameLayout>
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="match_parent"
+          android:layout_height="175dp"
+          android:id="@+id/card_minimal"
+          app:cardCornerRadius="15dp"
+          app:cardUseCompatPadding="true">
+
+         <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="end"
+             android:background="#046875">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/minimal0"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Minimal"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:textColor="#fff"
+                android:textSize="32dp"
+                android:textStyle="bold"/>
+
+         </FrameLayout>
+      </androidx.cardview.widget.CardView>
 
    </LinearLayout>
+
+   </LinearLayout>
+
    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>
