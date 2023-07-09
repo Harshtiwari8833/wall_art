@@ -23,8 +23,8 @@
             android:exported="false" />
         <activity
             android:name=".OpenWallActivity"
-            android:exported="false"
-            android:theme="@style/FullScreen" />
+            android:exported="false"/>
+<!--            android:theme="@style/FullScreen" />-->
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
