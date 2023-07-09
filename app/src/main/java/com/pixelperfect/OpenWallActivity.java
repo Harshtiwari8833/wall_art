@@ -42,7 +42,7 @@ public class OpenWallActivity extends AppCompatActivity {
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Toast.makeText(OpenWallActivity.this, snapshot.toString(), Toast.LENGTH_SHORT).show();
+
                 list.add(snapshot.getValue(wallModel.class));
 
             }

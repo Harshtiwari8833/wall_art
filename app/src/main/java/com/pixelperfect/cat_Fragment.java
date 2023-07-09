@@ -1,6 +1,7 @@
 package com.pixelperfect;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
@@ -54,6 +55,94 @@ public class cat_Fragment extends Fragment {
             @Override
             public void onClick(View view) {
 
+                Intent intent = new Intent(getContext() , CatWallActivity.class);
+                intent.putExtra("cat", "nature");
+                getContext().startActivity(intent);
+
+            }
+        });
+
+        card_animal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext() , CatWallActivity.class);
+                intent.putExtra("cat", "animals");
+                getContext().startActivity(intent);
+            }
+        });
+
+        card_landscape.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              category("landscape");
+            }
+        });
+        card_amoled.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                category("amoled");
+            }
+        });
+        card_dark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                category("dark");
+            }
+        });
+        card_city.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                category("city");
+            }
+        });  card_anime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                category("anime");
+            }
+        });  card_cars.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                category("cars");
+            }
+        });  card_sports.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                category("sports");
+            }
+        });  card_space.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                category("space");
+            }
+        });  card_superhero.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                category("superhero");
+            }
+        }); card_ios.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                category("iOS");
+            }
+        }); card_solid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                category("solids");
+            }
+        }); card_abstract.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                category("abstract");
+            }
+        }); card_shapes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                category("shapes");
+            }
+        });card_minimal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                category("minimal");
             }
         });
 
@@ -91,6 +180,11 @@ public class cat_Fragment extends Fragment {
             adapter.notifyDataSetChanged();  */
 
 
+    }
+    public void category(String key){
+        Intent intent = new Intent(getContext() , CatWallActivity.class);
+        intent.putExtra("cat", key);
+        getContext().startActivity(intent);
     }
 
 }
