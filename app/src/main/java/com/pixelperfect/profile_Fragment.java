@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
@@ -21,7 +22,9 @@ public class profile_Fragment extends Fragment {
 
    String s;
 
-   CardView about, policy, logout, rate;
+
+
+   LinearLayout about,policy, logout, rate;
   /* ArrayList<profileModel> arrayList = new ArrayList<>(); */
 
 

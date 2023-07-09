@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="#F7F7F7"
     tools:context=".profile_Fragment">
 
     <LinearLayout
@@ -55,79 +56,133 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="22dp"
                 android:layout_marginLeft="15dp"
-                android:text="here is your Profile"
+                android:text="Here is your Profile"
                 android:textSize="18dp"/>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="75dp"
-                app:cardCornerRadius="10dp"
-                app:cardUseCompatPadding="true"
-                android:backgroundTint="#DAD8D8"
-                android:id="@+id/card_about">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingVertical="10dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:id="@+id/card_about"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/profilebg"
+                   android:orientation="vertical">
+
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="About"
                     android:gravity="center_vertical"
-                    android:layout_marginLeft="8dp"
-                    android:textSize="28dp"/>
-                
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="75dp"
-                app:cardCornerRadius="10dp"
-                app:cardUseCompatPadding="true"
-                android:backgroundTint="#DAD8D8"
-                android:id="@+id/card_policy">
-
-                <TextView
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/black"
+                    android:textSize="27dp"/>
+                    <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Privacy Policy"
+                    android:text="Know more about the app"
                     android:gravity="center_vertical"
-                    android:layout_marginLeft="8dp"
-                    android:textSize="28dp"/>
+                    android:layout_marginLeft="15dp"
+                    android:textSize="14dp"/>
 
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="75dp"
-                app:cardCornerRadius="10dp"
-                app:cardUseCompatPadding="true"
-                android:backgroundTint="#DAD8D8"
-                android:id="@+id/card_logout">
+                </LinearLayout>
 
-                <TextView
+
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Logout"
-                    android:gravity="center_vertical"
-                    android:layout_marginLeft="8dp"
-                    android:textSize="28dp"/>
+                    android:paddingVertical="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/profilebg"
+                    android:id="@+id/card_policy"
+                    android:layout_marginHorizontal="15dp"
+                    android:orientation="vertical">
 
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="75dp"
-                app:cardCornerRadius="10dp"
-                app:cardUseCompatPadding="true"
-                android:backgroundTint="#DAD8D8"
-                android:id="@+id/card_rate">
 
-                <TextView
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Privacy Policy"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="@color/black"
+                        android:textSize="27dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Check out the details here"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="14dp"/>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Rate Us"
-                    android:gravity="center_vertical"
-                    android:layout_marginLeft="8dp"
-                    android:textSize="28dp"/>
+                    android:paddingVertical="10dp"
+                    android:id="@+id/card_logout"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:background="@drawable/profilebg"
+                    android:orientation="vertical">
 
-            </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Logout"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="@color/black"
+                        android:textSize="27dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Log out of your account"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="14dp"/>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingVertical="10dp"
+                    android:id="@+id/card_rate"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:background="@drawable/profilebg"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Rate Us"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="@color/black"
+                        android:textSize="27dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Rate this app on play store"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="14dp"/>
+
+                </LinearLayout>
+
+
 
         </LinearLayout>
 

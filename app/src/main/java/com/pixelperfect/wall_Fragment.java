@@ -49,7 +49,7 @@ public class wall_Fragment extends Fragment {
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                         wallModel data =   dataSnapshot.getValue(wallModel.class);
                         array.add(data);
-                        Toast.makeText(getContext(), dataSnapshot.toString(), Toast.LENGTH_SHORT).show();
+
 
                     }
                     adapter1 = new wallpaperAdapter(getContext(),array);
