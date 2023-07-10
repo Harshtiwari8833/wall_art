@@ -48,6 +48,7 @@ public class profile_Fragment extends Fragment {
                 .requestEmail()
                 .build();
 
+        googleApiClient.connect();
         googleApiClient = new GoogleApiClient.Builder(getContext())
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso) // gso is your GoogleSignInOptions instance
                 .build();
@@ -125,6 +126,7 @@ public class profile_Fragment extends Fragment {
 
 
     private void logout() {
+
         SharedPreferences pref4 = getContext().getSharedPreferences("signup", MODE_PRIVATE);
         pref4.getBoolean("flag2", false);
         SharedPreferences.Editor editor3 = pref4.edit();
