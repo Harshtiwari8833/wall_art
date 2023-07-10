@@ -32,6 +32,7 @@ public class profile_Fragment extends Fragment {
    String s;
    CircleImageView user_img;
    TextView user_name;
+   String imgUrl;
    LinearLayout about,policy, logout, rate;
   /* ArrayList<profileModel> arrayList = new ArrayList<>(); */
 
@@ -53,9 +54,16 @@ public class profile_Fragment extends Fragment {
 
        user_name.setText("Hi! "+name);
         SharedPreferences pref2 = getContext().getSharedPreferences("user_email", MODE_PRIVATE);
-       String imgUrl =  pref2.getString("photo", "");
+       imgUrl =  pref2.getString("photo", "");
 
-        Glide.with(getContext()).load(imgUrl).into(user_img);
+       if(imgUrl.equals("")){
+           user_img.setImageDrawable(getContext().getResources().getDrawable(R.drawable.profile));
+
+       }else{
+           Glide.with(getContext()).load(imgUrl).into(user_img);
+       }
+
+
 
         about.setOnClickListener(new View.OnClickListener() {
             @Override

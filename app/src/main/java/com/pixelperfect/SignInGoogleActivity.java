@@ -79,7 +79,7 @@ public class SignInGoogleActivity extends AppCompatActivity implements GoogleApi
             GoogleSignInAccount account = result.getSignInAccount();
             String email = account.getEmail();
             String displayName = account.getDisplayName();
-            String photoUrl = account.getPhotoUrl().toString();
+
 
 
               SharedPreferences pref = getSharedPreferences("user_email", MODE_PRIVATE);
@@ -95,12 +95,15 @@ public class SignInGoogleActivity extends AppCompatActivity implements GoogleApi
             editor1.putString("name", displayName);
             editor1.apply();
 
+            try {
+                String photoUrl = account.getPhotoUrl().toString();
+                SharedPreferences pref2 = getSharedPreferences("user_email", MODE_PRIVATE);
+                pref2.getString("photo", "");
+                SharedPreferences.Editor editor2 = pref2.edit();
+                editor2.putString("photo", photoUrl);
+                editor2.apply();
+            }catch (Exception e) {}
 
-            SharedPreferences pref2 = getSharedPreferences("user_email", MODE_PRIVATE);
-            pref2.getString("photo", "");
-            SharedPreferences.Editor editor2 = pref2.edit();
-            editor2.putString("photo", photoUrl);
-            editor2.apply();
             SharedPreferences pref4 = getSharedPreferences("signup", MODE_PRIVATE);
             pref4.getBoolean("flag2", false);
             SharedPreferences.Editor editor3 = pref4.edit();
