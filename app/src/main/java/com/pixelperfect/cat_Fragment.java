@@ -1,7 +1,10 @@
 package com.pixelperfect;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
@@ -55,9 +58,8 @@ public class cat_Fragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getContext() , CatWallActivity.class);
-                intent.putExtra("cat", "nature");
-                getContext().startActivity(intent);
+
+                category("nature");
 
             }
         });
@@ -65,9 +67,7 @@ public class cat_Fragment extends Fragment {
         card_animal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext() , CatWallActivity.class);
-                intent.putExtra("cat", "animals");
-                getContext().startActivity(intent);
+                category("animals");
             }
         });
 
@@ -183,7 +183,14 @@ public class cat_Fragment extends Fragment {
     }
     public void category(String key){
         Intent intent = new Intent(getContext() , CatWallActivity.class);
-        intent.putExtra("cat", key);
+
+
+        SharedPreferences preferences = getContext().getSharedPreferences("Category",MODE_PRIVATE);
+        preferences.getString("cat","");
+
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("cat",key);
+        editor.apply();
         getContext().startActivity(intent);
     }
 

@@ -1,12 +1,16 @@
 package com.pixelperfect;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,22 +36,24 @@ public class catAdapter extends RecyclerView.Adapter<wallpaperAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull wallpaperAdapter.ViewHolder holder, int position) {
+
         Glide.with(context).load(list.get(position).url).into(holder.wall_img);
-//        holder.wall_img.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                int id = list.get(position).id;
-//                Intent intent = new Intent(context,OpenWallActivity.class);
-//                intent.putExtra("wall_id",id);
-//                context.startActivity(intent);
-//            }
-//        });
+        holder.wall_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                int id = list.get(position).id;
+                Intent intent = new Intent(context,OpenCatWallActivity.class);
+                intent.putExtra("wall_id",id);
+
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

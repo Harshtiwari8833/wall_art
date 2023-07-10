@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -19,7 +20,7 @@ import java.util.List;
 
 public class CatWallActivity extends AppCompatActivity {
     RecyclerView recycler;
-    wallpaperAdapter adapter1;
+    catAdapter adapter1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +28,12 @@ public class CatWallActivity extends AppCompatActivity {
         recycler = findViewById(R.id.wall_recycler);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(CatWallActivity.this, 2);
         recycler.setLayoutManager(gridLayoutManager);
- String category = getIntent().getStringExtra("cat");
+
+
+
+        SharedPreferences preferences = getSharedPreferences("Category",MODE_PRIVATE);
+        String category  = preferences.getString("cat","");
+
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("category").child(category);
         reference.addValueEventListener(new ValueEventListener() {
@@ -41,7 +47,7 @@ public class CatWallActivity extends AppCompatActivity {
 
 
                 }
-                adapter1 = new wallpaperAdapter(CatWallActivity.this,array);
+                adapter1 = new catAdapter(CatWallActivity.this,array);
 
                 recycler.setAdapter(adapter1);
                 adapter1.notifyDataSetChanged();
