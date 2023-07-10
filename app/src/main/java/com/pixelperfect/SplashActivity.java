@@ -38,11 +38,7 @@ public class SplashActivity extends AppCompatActivity {
                     Intent intent1 = new Intent(SplashActivity.this, SignInGoogleActivity.class);
                     finish();
                     startActivity(intent1);
-                } else if (check_onboarding && check) {
-                    Intent intent1 = new Intent(SplashActivity.this, MainActivity.class);
-                    finish();
-                    startActivity(intent1);
-                } else if (check_onboarding && check_signup && check) {
+                } else if (check_onboarding && check_signup) {
                     Intent intent1 = new Intent(SplashActivity.this, MainActivity.class);
                     finish();
                     startActivity(intent1);

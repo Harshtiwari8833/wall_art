@@ -20,6 +20,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.util.ArrayList;
 
@@ -32,6 +35,7 @@ public class profile_Fragment extends Fragment {
    String s;
    CircleImageView user_img;
    TextView user_name;
+    private GoogleApiClient googleApiClient;
    String imgUrl;
    LinearLayout about,policy, logout, rate;
   /* ArrayList<profileModel> arrayList = new ArrayList<>(); */
@@ -40,7 +44,14 @@ public class profile_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
 
+        googleApiClient = new GoogleApiClient.Builder(getContext())
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso) // gso is your GoogleSignInOptions instance
+                .build();
+        googleApiClient.connect();
         View view = inflater.inflate(R.layout.fragment_profile_, container, false);
        user_img = view.findViewById(R.id.user_img);
        user_name = view.findViewById(R.id.user_name);
@@ -99,27 +110,43 @@ public class profile_Fragment extends Fragment {
 
             }
         });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                logout();
+            }
+        });
+
+
         return view;
 
+    }
+
+
+    private void logout() {
+        SharedPreferences pref4 = getContext().getSharedPreferences("signup", MODE_PRIVATE);
+        pref4.getBoolean("flag2", false);
+        SharedPreferences.Editor editor3 = pref4.edit();
+        editor3.putBoolean("flag2", false);
+        editor3.apply();
 
 
 
+        Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(status -> {
+            // Optional: Update your UI or perform any other actions after logout
+            // For example, you can navigate to the login screen
+            Intent intent = new Intent(getContext(), SignInGoogleActivity.class);
+            startActivity(intent);
+            getActivity().finish();
 
-
-
-
-
-       /*  recyclerView = view.findViewById(R.id.pro_recycler);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
-        recyclerView.setLayoutManager(linearLayoutManager); */
-
-     /*   arrayList.add(new profileModel("About"));
-        arrayList.add(new profileModel("Privacy Policy"));
-        arrayList.add(new profileModel("Logout"));
-        arrayList.add(new profileModel("Rate Us"));
-
-        profile_adapter adapter = new profile_adapter(getContext(),arrayList);
-        recyclerView.setAdapter(adapter);
-        adapter.notifyDataSetChanged(); */
+        });
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (googleApiClient != null && googleApiClient.isConnected()) {
+            googleApiClient.disconnect();
+        }
     }
 }

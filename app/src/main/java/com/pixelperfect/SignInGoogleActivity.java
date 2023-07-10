@@ -116,6 +116,7 @@ public class SignInGoogleActivity extends AppCompatActivity implements GoogleApi
             // Example: Displaying the user's email in a toast message
             Toast.makeText(this, "signed in as: " + email, Toast.LENGTH_SHORT).show();
             startActivity(intent);
+            finish();
         } else {
             Toast.makeText(this, "Sign-in failed. Please try again.", Toast.LENGTH_SHORT).show();
         }
