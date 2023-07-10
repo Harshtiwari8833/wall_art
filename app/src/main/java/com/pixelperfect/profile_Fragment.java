@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.Auth;
@@ -48,7 +49,6 @@ public class profile_Fragment extends Fragment {
                 .requestEmail()
                 .build();
 
-        googleApiClient.connect();
         googleApiClient = new GoogleApiClient.Builder(getContext())
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso) // gso is your GoogleSignInOptions instance
                 .build();
@@ -126,23 +126,27 @@ public class profile_Fragment extends Fragment {
 
 
     private void logout() {
-
         SharedPreferences pref4 = getContext().getSharedPreferences("signup", MODE_PRIVATE);
         pref4.getBoolean("flag2", false);
         SharedPreferences.Editor editor3 = pref4.edit();
         editor3.putBoolean("flag2", false);
         editor3.apply();
-
-
-
-        Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(status -> {
-            // Optional: Update your UI or perform any other actions after logout
-            // For example, you can navigate to the login screen
-            Intent intent = new Intent(getContext(), SignInGoogleActivity.class);
-            startActivity(intent);
-            getActivity().finish();
-
-        });
+        try{
+    Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(status -> {
+        // Optional: Update your UI or perform any other actions after logout
+        // For example, you can navigate to the login screen
+        Intent intent = new Intent(getContext(), SignInGoogleActivity.class);
+        startActivity(intent);
+        getActivity().finish();
+    });
+     }catch (Exception e){
+    Toast.makeText(getContext(), "error: " +e, Toast.LENGTH_SHORT).show();
+      }
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        googleApiClient.connect();
     }
     @Override
     public void onStop() {
