@@ -1,6 +1,9 @@
 package com.pixelperfect;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -12,18 +15,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class profile_Fragment extends Fragment {
 
    RecyclerView recyclerView;
 
    String s;
-
-
-
+   CircleImageView user_img;
+   TextView user_name;
    LinearLayout about,policy, logout, rate;
   /* ArrayList<profileModel> arrayList = new ArrayList<>(); */
 
@@ -33,11 +41,21 @@ public class profile_Fragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_profile_, container, false);
-
+       user_img = view.findViewById(R.id.user_img);
+       user_name = view.findViewById(R.id.user_name);
         about = view.findViewById(R.id.card_about);
         policy = view.findViewById(R.id.card_policy);
         logout = view.findViewById(R.id.card_logout);
         rate = view.findViewById(R.id.card_rate);
+
+        SharedPreferences pref1 = getContext().getSharedPreferences("user_name", MODE_PRIVATE);
+       String name = pref1.getString("name", "");
+
+       user_name.setText("Hi! "+name);
+        SharedPreferences pref2 = getContext().getSharedPreferences("user_email", MODE_PRIVATE);
+       String imgUrl =  pref2.getString("photo", "");
+
+        Glide.with(getContext()).load(imgUrl).into(user_img);
 
         about.setOnClickListener(new View.OnClickListener() {
             @Override
