@@ -35,16 +35,18 @@ public class CatWallActivity extends AppCompatActivity {
         String category  = preferences.getString("cat","");
 
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("category").child(category);
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("wallpaper");
         reference.addValueEventListener(new ValueEventListener() {
             List<wallModel> array = new ArrayList<>();
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    wallModel data =   dataSnapshot.getValue(wallModel.class);
-                    array.add(data);
+                    String cate  =   dataSnapshot.child("cat").getValue(String.class);
 
+                    if (cate.matches(category)) {
+                        array.add(dataSnapshot.getValue(wallModel.class));
+                    }
 
                 }
                 adapter1 = new catAdapter(CatWallActivity.this,array);

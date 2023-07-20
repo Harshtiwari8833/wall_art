@@ -2,13 +2,14 @@ package com.pixelperfect;
 
 public class wallModel {
    String url;
-   int id;
+   String id;
+   String cat;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -20,9 +21,10 @@ public class wallModel {
         this.url = url;
     }
 
-    public wallModel(String url, int id) {
+    public wallModel(String url, String id, String cat) {
         this.url = url;
         this.id =  id;
+        this.cat =cat;
     }
 
     public  wallModel(){

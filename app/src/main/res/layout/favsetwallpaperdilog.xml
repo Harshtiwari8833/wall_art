@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bottom_sheet_design"
+    android:backgroundTint="#F7F7F7"
+    android:paddingVertical="22dp"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Download this wallpaper"
+            android:textColor="@color/black"
+            android:textSize="15sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remove from favourite list"
+            android:textColor="@color/black"
+            android:textSize="15sp"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+
+
+        android:text="Set Wallpaper"
+        android:layout_height="70dp"
+        android:layout_gravity="end"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="16dp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        app:cornerRadius="28dp"
+        android:id="@+id/set_wall"
+
+      />
+
+
+</LinearLayout>

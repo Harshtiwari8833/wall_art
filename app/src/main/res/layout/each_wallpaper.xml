@@ -18,26 +18,31 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="6dp"
 
-        android:src="@drawable/dislike"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintEnd_toEndOf="parent" />
+<!--    <CheckBox-->
+<!--        android:id="@+id/cbHeart"-->
+<!--        android:layout_width="80dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="4dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:layout_marginBottom="6dp"-->
+<!--        android:button="@drawable/selector_wishlist_items"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/textView4"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:useMaterialThemeColors="false" />-->
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="20dp"
-        android:text="Favourite"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/set_wall"
-        app:layout_constraintEnd_toEndOf="parent" />
+<!--    <TextView-->
+<!--        android:id="@+id/textView4"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="15dp"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        android:text="Favourite"-->
+
+<!--        android:textColor="@color/white"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/set_wall"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
 
     <ImageView
         android:id="@+id/set_wall"

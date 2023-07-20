@@ -33,44 +33,31 @@ public class OpenCatWallActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPager);
         adapter= new openWallAdapter(this,list);
 
-        int id = getIntent().getExtras().getInt("wall_id");
-        String wallid = String.valueOf(id);
+        int pos = getIntent().getExtras().getInt("wall_pos1");
+
 
         SharedPreferences preferences = getSharedPreferences("Category",MODE_PRIVATE);
         String category  = preferences.getString("cat","");
-        Toast.makeText(this, wallid + "harsh", Toast.LENGTH_SHORT).show();
 
-        viewPager.setAdapter(adapter);
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("category").child(category);
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("category").child(category).child(wallid);
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("wallpaper");
 
-        ref.addValueEventListener(new ValueEventListener() {
+        reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                list.add(snapshot.getValue(wallModel.class));
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    String cate  =   dataSnapshot.child("cat").getValue(String.class);
 
-            }
+                    if (cate.matches(category)) {
+                        list.add(dataSnapshot.getValue(wallModel.class));
+                    }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    list.add(dataSnapshot.getValue(wallModel.class));
                 }
+                adapter= new openWallAdapter(OpenCatWallActivity.this,list);
+                viewPager.setAdapter(adapter);
 
+                viewPager.setCurrentItem(pos,false);
 
-                for (int i = id; i>0; i-- ){
-                    list.remove(i);
-                }
 
             }
 
@@ -84,9 +71,6 @@ public class OpenCatWallActivity extends AppCompatActivity {
 
 
 
-        viewPager = findViewById(R.id.viewPager);
-        adapter= new openWallAdapter(this,list);
-        viewPager.setAdapter(adapter);
 
 
     }

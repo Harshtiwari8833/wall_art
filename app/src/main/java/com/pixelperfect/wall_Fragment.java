@@ -49,13 +49,11 @@ public class wall_Fragment extends Fragment {
                     for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                         wallModel data =   dataSnapshot.getValue(wallModel.class);
                         array.add(data);
-
-
                     }
                     adapter1 = new wallpaperAdapter(getContext(),array);
                     recycler.setLayoutManager(gridLayoutManager);
                     recycler.setAdapter(adapter1);
-                     adapter1.notifyDataSetChanged();
+                    adapter1.notifyDataSetChanged();
                     recycler.setNestedScrollingEnabled(true);
 
                 }
