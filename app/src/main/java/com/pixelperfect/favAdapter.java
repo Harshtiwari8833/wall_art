@@ -42,6 +42,7 @@ public class favAdapter extends RecyclerView.Adapter<favAdapter.ViewHolder>  {
             public void onClick(View view) {
                 Intent intent = new Intent(context, OpenfavWallActivity.class);
                 intent.putExtra("wall_pos1",list.get(position).getUrl());
+                intent.putExtra("wall_id",list.get(position).getId());
                 context.startActivity(intent);
             }
         });
