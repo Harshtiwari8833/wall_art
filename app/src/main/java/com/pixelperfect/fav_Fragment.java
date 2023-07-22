@@ -2,6 +2,7 @@ package com.pixelperfect;
 
 import static android.content.Context.MODE_PRIVATE;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
@@ -38,6 +39,7 @@ public class fav_Fragment extends Fragment {
     Boolean check;
     ArrayList<wallModel> array = new ArrayList<>();
     SharedPreferences pref2;
+    String index ;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -45,20 +47,7 @@ public class fav_Fragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_fav_, container, false);
          pref2 = getContext().getSharedPreferences("load_fragment", MODE_PRIVATE);
         check =  pref2.getBoolean("flag", false);
-        TextView test = view.findViewById(R.id.test);
 
-        test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(), "hello", Toast.LENGTH_SHORT).show();
-                try {
-                    Toast.makeText(getContext(), "try", Toast.LENGTH_SHORT).show();
-                    adapter1.notifyDataSetChanged();
-                }catch (Exception e){
-
-                }
-            }
-        });
 
 
 
@@ -115,8 +104,23 @@ public class fav_Fragment extends Fragment {
 
      @Override
      public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+         try {
+             SharedPreferences preferences = getContext().getSharedPreferences("position", Context.MODE_PRIVATE);
+             index=  preferences.getString("flag", "");
+
+             int i =   Integer.parseInt(index);
+             array.remove(i);
+         }catch (Exception e){
+
+         }
+
+//
+
+//
+
 
          adapter1.notifyDataSetChanged();
+
 
      }
 
@@ -135,4 +139,13 @@ public class fav_Fragment extends Fragment {
 
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+
+
+
+
+
+    }
 }

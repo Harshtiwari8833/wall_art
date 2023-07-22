@@ -58,6 +58,7 @@ public class wallpaperAdapter extends RecyclerView.Adapter<wallpaperAdapter.View
         return new ViewHolder(view);
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         url = list.get(position).getUrl();
