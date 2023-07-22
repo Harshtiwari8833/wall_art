@@ -19,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -27,6 +28,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,6 +46,10 @@ public class wallpaperAdapter extends RecyclerView.Adapter<wallpaperAdapter.View
         this.context = context;
         this.list= list;
     }
+
+
+
+
     @NonNull
     @Override
     public wallpaperAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -54,9 +60,15 @@ public class wallpaperAdapter extends RecyclerView.Adapter<wallpaperAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        url = list.get(position).getUrl();
 
-        Glide.with(context).load(list.get(position).url).into(holder.wall_img);
-
+                Glide
+                .with(context)
+                .load(url)
+                .apply(new RequestOptions().override(170, 280))
+                .centerCrop()
+                .into(holder.wall_img);
+//        Picasso.get().load(url).resize(50,50).centerCrop().into(holder.wall_img);
 
         holder.wall_img.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +81,7 @@ public class wallpaperAdapter extends RecyclerView.Adapter<wallpaperAdapter.View
                 context.startActivity(intent);
             }
         });
+
         SharedPreferences pref = context.getSharedPreferences("user_email", MODE_PRIVATE);
        String user_email =  pref.getString("email", "");
         emailUsername = user_email;
@@ -118,12 +131,12 @@ public class wallpaperAdapter extends RecyclerView.Adapter<wallpaperAdapter.View
               if(holder.cbHeart.isChecked()){
                   id = list.get(position).getId();
                   String user_id = String.valueOf(id);
-                  url = list.get(position).getUrl();
+                 String wall_url = list.get(position).url;
                   DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("users").child(emailUsername).child("favouraite").child(user_id);
 
                   HashMap hashMap = new HashMap<>();
                   hashMap.put("id", id);
-                  hashMap.put("url",url);
+                  hashMap.put("url",wall_url);
                   reference.setValue(hashMap);
 
               }else{
@@ -148,6 +161,8 @@ public class wallpaperAdapter extends RecyclerView.Adapter<wallpaperAdapter.View
       });
 
     }
+
+
 
     @Override
     public int getItemCount() {

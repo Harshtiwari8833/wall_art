@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 
@@ -35,8 +36,13 @@ public class favAdapter extends RecyclerView.Adapter<favAdapter.ViewHolder>  {
 
     @Override
     public void onBindViewHolder(@NonNull favAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        Glide.with(context).load(list.get(position).url).into(holder.wall_img);
 
+                Glide
+                .with(context)
+                .load(list.get(position).url)
+                .apply(new RequestOptions().override(170, 280))
+                .centerCrop()
+                .into(holder.wall_img);
         holder.wall_img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

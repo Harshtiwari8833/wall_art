@@ -61,6 +61,7 @@ public class wall_Fragment extends Fragment {
                 public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                     wallModel data =   snapshot.getValue(wallModel.class);
                     array.add(data);
+
                     adapter1.notifyDataSetChanged();
                 }
 
