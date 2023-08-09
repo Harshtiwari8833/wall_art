@@ -3,10 +3,12 @@ package com.pixelperfect;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -46,6 +48,12 @@ public class favAdapter extends RecyclerView.Adapter<favAdapter.ViewHolder>  {
         holder.wall_img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences preferences = context.getSharedPreferences("position", Context.MODE_PRIVATE);
+                preferences.getString("flag", "");
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("flag", String.valueOf(position));
+                editor.apply();
+
                 Intent intent = new Intent(context, OpenfavWallActivity.class);
                 intent.putExtra("wall_pos1",list.get(position).getUrl());
                 intent.putExtra("wall_id",list.get(position).getId());

@@ -77,7 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/img"
-                android:src="@drawable/nature0"
+                android:src="@drawable/nature"
                 android:scaleType="centerCrop"/>
 
             <TextView
@@ -112,7 +112,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/city0"
+                android:src="@drawable/city"
                 android:scaleType="centerCrop"/>
 
             <TextView
@@ -145,7 +145,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/animal0"
+                android:src="@drawable/animal"
                 android:scaleType="centerCrop"/>
 
             <TextView
@@ -178,7 +178,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/landscape0"
+                android:src="@drawable/landscape"
                 android:scaleType="centerCrop"/>
 
             <TextView
@@ -211,7 +211,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/amoled0"
+                android:src="@drawable/amoled"
                 android:scaleType="centerCrop"/>
 
             <TextView
@@ -245,7 +245,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/dark0"
+                android:src="@drawable/dark"
                 android:scaleType="centerCrop"/>
 
             <TextView
@@ -279,7 +279,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/anime0"
+                android:src="@drawable/anime"
                 android:scaleType="centerCrop"/>
 
             <TextView
@@ -313,7 +313,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/cars0"
+                android:src="@drawable/car"
                 android:scaleType="centerCrop"/>
 
             <TextView
@@ -346,7 +346,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/sports0"
+                android:src="@drawable/sports"
                 android:scaleType="centerCrop"/>
 
             <TextView
@@ -379,7 +379,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/space0"
+                android:src="@drawable/space"
                 android:scaleType="centerCrop"/>
 
             <TextView
@@ -413,7 +413,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/superhero0"
+                android:src="@drawable/superheroes"
                 android:scaleType="centerCrop"/>
 
             <TextView
@@ -447,7 +447,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ios0"
+                android:src="@drawable/ios"
                 android:scaleType="centerCrop"/>
 
             <TextView
@@ -480,7 +480,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/solid02"
+                android:src="@drawable/solid"
                 android:scaleType="centerCrop"/>
 
             <TextView
@@ -514,7 +514,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/abst02"
+                android:src="@drawable/abs"
                 android:scaleType="centerCrop"/>
 
             <TextView
@@ -548,7 +548,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/shape0"
+                android:src="@drawable/shape"
                 android:scaleType="centerCrop"/>
 
             <TextView
@@ -582,7 +582,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/minimal0"
+                android:src="@drawable/minimal"
                 android:scaleType="centerCrop"/>
 
             <TextView
